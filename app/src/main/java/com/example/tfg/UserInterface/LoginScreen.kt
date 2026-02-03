@@ -4,9 +4,11 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.*
+import com.example.tfg.ViewModel.LoginViewModel
 
 @Composable
 fun LoginScreen(
+    viewModel: LoginViewModel,
     onRegisterClick: () -> Unit
 ) {
     // ...
@@ -25,16 +27,17 @@ fun LoginScreen(
     )
 
     Button(
-        onClick = {  },
+        onClick = viewModel::login,
         modifier = Modifier.fillMaxWidth()
     ) {
         Text("Iniciar sesión")
     }
 
     OutlinedButton(
-        onClick = {  },
+        onClick = onRegisterClick,
         modifier = Modifier.fillMaxWidth()
     ) {
         Text("Registrarse")
     }
 }
+
